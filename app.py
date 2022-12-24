@@ -10,8 +10,13 @@ def index():
     toots = response.json()
 
     images = []
+    handles = []
+    captions = []
     for toot in toots:
         for attachment in toot['media_attachments']:
             images.append(attachment['url'])
+            handles.append(toot['account']['acct'])
+            captions.append(toot['content'])
 
-    return render_template('index.html', images=images)
+    return render_template('index.html', images=images, handles=handles, captions=captions)
+

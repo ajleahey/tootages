@@ -1,11 +1,51 @@
 <html>
   <head>
-    <title>Mastodon Image Gallery</title>
+    <title>esq.social - the gallery</title>
+    <style>
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .image-container img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .image-container a {
+        color: #0084b4;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .image-container p {
+        margin-top: 8px;
+        font-size: 14px;
+        color: #666;
+      }
+    </style>
   </head>
   <body>
     <div class="gallery">
-      {% for image in images %}
-        <img src="{{ image }}" alt="Mastodon image" />
+      {% for i in range(images|length) %}
+        <div class="image-container">
+          <a href="https://your-mastodon-instance.com/@{{ handles[i] }}">
+            <img src="{{ images[i] }}" alt="Mastodon image" />
+          </a>
+          <p>{{ captions[i] }}</p>
+        </div>
       {% endfor %}
     </div>
   </body>
