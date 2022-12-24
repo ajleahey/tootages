@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    timeline_url = 'https://esq.social/api/v1/timelines/public'
+    timeline_url = 'https://{YOUR INSTANCE URL}/api/v1/timelines/public'
     headers = {
         'Authorization': 'Bearer {YOUR API KEY}'
     }
