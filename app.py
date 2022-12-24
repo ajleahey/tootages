@@ -6,7 +6,13 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     timeline_url = 'https://esq.social/api/v1/timelines/public'
-    response = requests.get(timeline_url)
+    headers = {
+        'Authorization': 'Bearer oTx3JC-FgLqQpwWXMytb67PC_RazSuxeFB14N8JbrPQ'
+    }
+    params = {
+        'limit': 100
+    }
+    response = requests.get(timeline_url, headers=headers, params=params)
     toots = response.json()
 
     images = []
