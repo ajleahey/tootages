@@ -4,7 +4,7 @@
     <style>
       .gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 20px;
         align-items: center;
         justify-content: center;
@@ -40,7 +40,7 @@
     <div class="gallery">
       {% for i in range(images|length) %}
         <div class="image-container">
-          <a href="https://your-mastodon-instance.com/@{{ handles[i] }}">
+          <a href="https://esq.social/@{{ handles[i] }}">
             <img src="{{ images[i] }}" alt="Mastodon image" />
           </a>
           <p>{{ captions[i]|safe }}</p>
