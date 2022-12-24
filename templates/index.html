@@ -68,13 +68,13 @@
       <h1>esq.social - the visual guide</h1>
       <p>All of the images are those that are publicly available on the esq.social Mastodon instance.</p>
     </div>
-    <div class="image-cloud">
+    <div class="gallery">
       {% for i in range(images|length) %}
         <div class="image-container">
-          <a href="https://esq.social/users/{{ usernames[i] }}">
-            <img src="{{ images[i] }}" alt="{{ captions[i] }}">
+          <a href="https://your-mastodon-instance.com/@{{ handles[i] }}">
+            <img src="{{ images[i] }}" alt="Mastodon image" />
           </a>
-          <p>{{ captions[i] }}</p>
+          <p>{{ captions[i]|safe }}</p>
         </div>
       {% endfor %}
     </div>
