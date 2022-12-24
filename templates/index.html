@@ -46,35 +46,38 @@
         border-radius: 5px;
       }
 
-      .image-container {
-        margin-bottom: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        background-color: #f6f6f6;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
-
-        .image-container img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 5px;
-        }
-
-        .image-container a {
+      .image-container a {
         color: #0084b4;
         font-weight: bold;
         text-decoration: none;
-        }
+      }
 
-        .image-container p {
+      .image-container p {
         margin-top: 8px;
         font-size: 14px;
         color: #666;
         width: 100%;
         box-sizing: border-box;
         padding: 8px;
-        }
-
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="header">
+      <h1>esq.social - the visual guide</h1>
+      <p>All of the images are those that are publicly available on the esq.social Mastodon instance.</p>
+    </div>
+    <div class="image-cloud">
+      {% for i in range(images|length) %}
+        <div class="image-container">
+          <a href="https://esq.social/users/{{ usernames[i] }}">
+            <img src="{{ images[i] }}" alt="{{ captions[i] }}">
+          </a>
+          <p>{{ captions[i] }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
 
