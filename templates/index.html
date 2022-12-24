@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>esq.social - the gallery</title>
+    <title>esq.social - the visual guide</title>
     <style>
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -8,51 +8,73 @@
           sans-serif;
       }
 
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
-        align-items: center;
-        justify-content: center;
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
       }
 
-      .image-container {
+      .header h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+
+      .header p {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .image-cloud {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
 
+      .image-container {
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #f6f6f6;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       .image-container img {
-        height: 250px;
+        width: 100%;
         object-fit: cover;
         border-radius: 5px;
       }
 
-      .image-container a {
+      .image-container {
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #f6f6f6;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .image-container img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+        }
+
+        .image-container a {
         color: #0084b4;
         font-weight: bold;
         text-decoration: none;
-      }
+        }
 
-      .image-container p {
+        .image-container p {
         margin-top: 8px;
         font-size: 14px;
         color: #666;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="gallery">
-      {% for i in range(images|length) %}
-        <div class="image-container">
-          <a href="https://esq.social/@{{ handles[i] }}">
-            <img src="{{ images[i] }}" alt="Mastodon image" />
-          </a>
-          <p>{{ captions[i]|safe }}</p>
-        </div>
-      {% endfor %}
-    </div>
-  </body>
-</html>
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        }
+
 
