@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     timeline_url = 'https://esq.social/api/v1/timelines/public'
     headers = {
-        'Authorization': 'Bearer oTx3JC-FgLqQpwWXMytb67PC_RazSuxeFB14N8JbrPQ'
+        'Authorization': 'Bearer {YOUR API KEY}'
     }
     params = {
         'limit': 100
